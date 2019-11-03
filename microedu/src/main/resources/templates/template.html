@@ -1,5 +1,4 @@
-<#macro template title>
-<!DOCTYPE html>
+<#macro template title> <!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="utf-8">
@@ -12,7 +11,7 @@
 
 <!-- Data Tables -->
 <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.css"/> -->
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" />
 
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
@@ -21,56 +20,58 @@
 <title>${title?html}</title>
 <style>
 body {
-  overflow-x: hidden;
+	overflow-x: hidden;
 }
 
 #sidebar-wrapper {
-  min-height: 100vh;
-  margin-left: -15rem;
-  -webkit-transition: margin .25s ease-out;
-  -moz-transition: margin .25s ease-out;
-  -o-transition: margin .25s ease-out;
-  transition: margin .25s ease-out;
+	min-height: 100vh;
+	margin-left: -15rem;
+	-webkit-transition: margin .25s ease-out;
+	-moz-transition: margin .25s ease-out;
+	-o-transition: margin .25s ease-out;
+	transition: margin .25s ease-out;
 }
 
 #sidebar-wrapper .sidebar-heading {
-  padding: 0.875rem 1.25rem;
-  font-size: 1.2rem;
+	padding: 0.875rem 1.25rem;
+	font-size: 1.2rem;
 }
 
 #sidebar-wrapper .list-group {
-  width: 15rem;
+	width: 15rem;
 }
 
 #page-content-wrapper {
-  min-width: 100vw;
+	min-width: 100vw;
 }
 
 #wrapper.toggled #sidebar-wrapper {
-  margin-left: 0;
+	margin-left: 0;
 }
 
-@media (min-width: 768px) {
-  #sidebar-wrapper {
-    margin-left: 0;
-  }
-
-  #page-content-wrapper {
-    min-width: 0;
-    width: 100%;
-  }
-
-  #wrapper.toggled #sidebar-wrapper {
-    margin-left: -15rem;
-  }
+@media ( min-width : 768px) {
+	#sidebar-wrapper {
+		margin-left: 0;
+	}
+	#page-content-wrapper {
+		min-width: 0;
+		width: 100%;
+	}
+	#wrapper.toggled #sidebar-wrapper {
+		margin-left: -15rem;
+	}
 }
-
 
 /* Criadas */
-.menu-lateral .list-group-item.list-group-item-action:hover,
-.menu-lateral .list-group-item.list-group-item-action:active,
-.menu-lateral .list-group-item.list-group-item-action:focus {
-  background-color: #CCFF90;
+.menu-lateral .list-group-item.list-group-item-action:hover, .menu-lateral .list-group-item.list-group-item-action:active,
+	.menu-lateral .list-group-item.list-group-item-action:focus {
+	background-color: #CCFF90;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 81%;
 }
 </style>
 
@@ -78,33 +79,48 @@ body {
 <body>
 	<div class="d-flex menu-lateral" id="wrapper">
 
-	<!-- Sidebar -->
-	<div class="border-right " id="sidebar-wrapper" style="width: 250px;">
-		<div class="sidebar-heading">MicroEdu</div>
-		<div class="list-group list-group-flush" style="width: 100%;">
-			<a href="#" class="list-group-item list-group-item-action"><i class="fas fa-address-card"></i> Usuários</a>
-			 <a href="#" class="list-group-item list-group-item-action ">Professores</a> 
-			 <a href="#" class="list-group-item list-group-item-action ">Alunos</a> 
-			<a href="#"	class="list-group-item list-group-item-action ">Turmas</a> 
-			<a href="#"	class="list-group-item list-group-item-action ">VIPs</a> 
-			<a href="#"	class="list-group-item list-group-item-action ">Cursos</a>
-			<a href="#"	class="list-group-item list-group-item-action ">Digitação</a>
-			<a href="#"	class="list-group-item list-group-item-action ">Notificações <span class="badge badge-light">4</span></a>
+		<!-- Sidebar -->
+		<div class="border-right " id="sidebar-wrapper" style="width: 250px;">
+			<div class="sidebar-heading">MicroEdu</div>
+			<div class="list-group list-group-flush" style="width: 100%;">
+				<a href="#" class="list-group-item list-group-item-action"><i class="fas fa-address-card"></i> Usuários</a> <a
+					href="#" class="list-group-item list-group-item-action ">Professores</a> <a href="#"
+					class="list-group-item list-group-item-action ">Alunos</a> <a href="#"
+					class="list-group-item list-group-item-action ">Turmas</a> <a href="#"
+					class="list-group-item list-group-item-action ">VIPs</a> <a href="#"
+					class="list-group-item list-group-item-action ">Cursos</a> <a href="#"
+					class="list-group-item list-group-item-action ">Digitação</a> <a href="#"
+					class="list-group-item list-group-item-action ">Notificações <span class="badge badge-light">4</span></a>
+			</div>
 		</div>
-	</div>
 
-	<!-- Page Content -->
-	<div id="page-content-wrapper">
+		<!-- Page Content -->
+		<div id="page-content-wrapper">
 
-		<div class="container-fluid">
+			<div class="container-fluid">
 
-			<#nested />
-	
+				<#nested />
+
+
+				<footer class="footer">
+					<div style="border-top: solid 1px; padding: 2px 0px 2px 0px;">
+						<h6 align="center">
+							Créditos - Rogério Viana - <a target="_blanck"
+								href="https://wiki.developer.mozilla.org/pt-BR/profiles/Rogerio-Viana"><img
+								src="https://developer.mozilla.org/static/img/opengraph-logo.72382e605ce3.png" width="15" height="15"
+								style="margin-bottom: 2px;"> </a> <a target="_blanck"
+								href="https://www.linkedin.com/in/rogeriofranciscoviana/"><i class="fab fa-linkedin"></i> </a> <a
+								target="_blanck" href="https://github.com/Rogerio-Viana/"><i class="fab fa-github"></i> </a> - Versão v1.0.0 -
+							&copy; 2019
+						</h6>
+					</div>
+				</footer>
+
+			</div>
 		</div>
-	</div>
-	<!-- /#page-content-wrapper -->
+		<!-- /#page-content-wrapper -->
 
-</div>
+	</div>
 
 	<!-- footer section -->
 
@@ -114,6 +130,4 @@ body {
 
 </#macro>
 
-<#macro javascript>
-	<#nested />
-</#macro>
+<#macro javascript> <#nested /> </#macro>

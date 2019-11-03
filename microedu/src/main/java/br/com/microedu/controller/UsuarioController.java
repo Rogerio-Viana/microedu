@@ -9,21 +9,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.com.microedu.freemarker.IndexOfMethod;
 import br.com.microedu.usuario.UsuarioModel;
 import br.com.microedu.usuario.UsuarioService;
 
 @Controller
 @RequestMapping("usuario")
-public class UsuarioController {
+public class UsuarioController extends TemplateController {
 
 	@Autowired
 	private UsuarioService usuarioService;
 
 	@RequestMapping(value = { "" }, method = RequestMethod.GET)
 	public ModelAndView buscar() {
-		return new ModelAndView("pages/listagem-usuario").addObject("usuarios", usuarioService.buscarTodos())
-				.addObject("indexOf", new IndexOfMethod());
+		return getTemplate("pages/listagem-usuario").addObject("usuarios", usuarioService.buscarTodos());
 	}
 
 	@RequestMapping(value = { "/", "{id}" }, method = RequestMethod.GET)
