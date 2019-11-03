@@ -1,0 +1,20 @@
+<#import "../template.html" as t />
+<@t.template title="Listagem de Usuário">
+
+<div class="container" style="border: solid;">
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<#list usuarios as usuario>
+			<hr>
+			<h1>${usuario.nome!''}</h1>
+			<h3>ID: ${usuario.id}</h3>
+			<h3>Email: ${usuario.email!''}</h3>
+			<h3>Senha: ${usuario.senha!''}</h3>
+			<h3>Tipo: ${usuario.tipoUsuario!''}</h3>
+			<hr>
+			</#list>
+		</div>
+	</div>
+</div>
+
+</@t.template>

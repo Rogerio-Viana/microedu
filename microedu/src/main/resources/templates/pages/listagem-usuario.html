@@ -1,0 +1,27 @@
+<#import "../template.html" as t />
+<#import "../dataTableFreemarker.html" as dt />
+<@t.template title="Listagem de Usuário">
+
+<#assign upper = "br.com.microedu.freemarker.UpperDirective"?new()>
+
+<div class="container" style="border: solid;">
+
+	<div>
+		${indexOf("met", "something")}
+	</div>
+	
+	<@dt.dataTable colunas = ["ID", "Nome", "Email", "Senha", "Tipo Usuário"] dados = usuarios></@>
+	
+</div>
+
+<@t.javascript >
+<script type="text/javascript">
+
+$(document).ready(function() {
+    $('#example').DataTable();
+} );
+
+</script>
+</@t.javascript>
+
+</@t.template>

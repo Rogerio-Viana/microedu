@@ -1,0 +1,29 @@
+<#macro dataTable colunas dados>
+<table id="example" class="table table-striped table-bordered" style="width: 100%">
+	<thead>
+		<tr>
+			<#list colunas as coluna>
+				<th>${coluna}</th>
+			</#list>
+		</tr>
+	</thead>
+	<tbody>
+		<#list dados as dado>
+		<tr>
+			<th>${dado.nome!''}</th>
+			<th>${dado.id}</th>
+			<th>${dado.email!''}</th>
+			<th>${dado.senha!''}</th>
+			<th>${dado.tipoUsuario!''}</th>
+		</tr>
+		</#list>
+	</tbody>
+	<tfoot>
+		<tr>
+			<#list colunas as coluna>
+				<th>${coluna}</th>
+			</#list>
+		</tr>
+	</tfoot>
+</table>
+</#macro>
