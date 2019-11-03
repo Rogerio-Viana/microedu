@@ -2,26 +2,25 @@
 <#import "../dataTableFreemarker.html" as dt />
 <@t.template title="Listagem de Usuário">
 
-<#assign upper = "br.com.microedu.freemarker.UpperDirective"?new()>
-
-<div class="container" style="border: solid;">
-
-	<div>
-		${indexOf("met", "something")}
-	</div>
-	
-	<@dt.dataTable colunas = ["ID", "Nome", "Email", "Senha", "Tipo Usuário"] dados = usuarios></@>
-	
-</div>
+<div class="row">
+          
+          <div class="col-md-12">
+			<@dt.dataTable colunas = ["ID", "Nome", "Email", "Senha", "Tipo Usuário"] dados = usuarios></@>
+		</div>
+		</div>
+		
+		
 
 <@t.javascript >
 <script type="text/javascript">
+	$(document).ready(function() {
+		$('#example').DataTable();
+	});
 
-$(document).ready(function() {
-    $('#example').DataTable();
-} );
-
+	$("#menu-toggle").click(function(e) {
+		e.preventDefault();
+		$("#wrapper").toggleClass("toggled");
+	});
 </script>
 </@t.javascript>
-
 </@t.template>
