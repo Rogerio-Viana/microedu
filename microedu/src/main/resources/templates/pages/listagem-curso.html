@@ -1,0 +1,39 @@
+<#import "../template.html" as t />
+<@t.template title="Listagem de Cursos">
+
+<nav aria-label="breadcrumb" style="margin-top: 15px;">
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item active" aria-current="page">Turmas - <a href="/curso/criar">Criar Turma</a></li>
+	</ol>
+</nav>
+
+<div class="row">
+
+	<#list turmas as turma>
+
+		<div class="card border-success col-md-4" style="max-width: 18rem; margin: 15px; padding: 0px;">
+			<div class="card-header">${turma.nome!''}</div>
+			<div class="card-body text-success">
+				<h5 class="card-title">${turma.descricao!''}</h5>
+				<p class="card-text">${turma.ementa!''}</p>
+				<footer class="blockquote-footer">Prof. ${turma.professor!''}</footer>
+			</div>
+			<div class="card-footer text-muted row">
+				<span class="col-md-8" style="margin-top: 6px;"> ${turma.horario!''} </span>
+				<a href="/curso/criar/${turma.id}" class="btn btn-outline-success col-md-4" style="color: black;">Editar</a>
+			</div>
+	
+		</div>
+
+	</#list>
+
+</div>
+
+<@t.javascript >
+<script type="text/javascript">
+	$("#menu-toggle").click(function(e) {
+		e.preventDefault();
+		$("#wrapper").toggleClass("toggled");
+	});
+</script>
+</@t.javascript> </@t.template>

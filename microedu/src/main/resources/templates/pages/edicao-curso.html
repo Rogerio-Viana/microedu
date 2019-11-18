@@ -1,0 +1,53 @@
+<#import "../template.html" as t />
+<@t.template title="Listagem de Cursos">
+
+<nav aria-label="breadcrumb" style="margin-top: 15px;">
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item active" aria-current="page">Criar Turma</li>
+	</ol>
+</nav>
+
+<div class="row">
+
+	<form class="col-md-12" action="/curso/criar" method="post">
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="nome">Nome</label> <input type="text" class="form-control" id="nome" value="${turma.nome!''}"
+					name="nome" placeholder="Nome">
+			</div>
+			<div class="form-group col-md-6">
+				<label for="descricao">Descrição</label> <input type="text" class="form-control" id="descricao"
+					value="${turma.descricao!''}" name="descricao" placeholder="Descrição">
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="horario">Horário</label> <input type="text" class="form-control" id="horario"
+					value="${turma.horario!''}" name="horario" placeholder="Horário">
+			</div>
+			<div class="form-group col-md-6">
+				<label for="professor">Professor</label> <input type="text" class="form-control" id="professor"
+					value="${turma.professor!''}" name="professor" placeholder="Professor">
+			</div>
+		</div>
+
+		<div class="form-row">
+			<div class="form-group col-md-12">
+				<label for="inputAddress">Ementa</label>
+				<textarea rows="5" style="width: 100%;" name="ementa">${turma.ementa!''}</textarea>
+			</div>
+		</div>
+
+		<button type="submit" class="btn btn-outline-success">Salvar</button>
+	</form>
+
+</div>
+
+<@t.javascript >
+<script type="text/javascript">
+	$("#menu-toggle").click(function(e) {
+		e.preventDefault();
+		$("#wrapper").toggleClass("toggled");
+	});
+</script>
+</@t.javascript> </@t.template>
