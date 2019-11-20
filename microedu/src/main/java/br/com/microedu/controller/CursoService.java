@@ -6,7 +6,7 @@ import br.com.microedu.entidade.Curso;
 
 public interface CursoService {
 
-	void apagar(Integer id);
+	Boolean apagar(Integer id);
 
 	List<Curso> listar();
 

@@ -10,6 +10,8 @@
 <div class="row">
 
 	<form class="col-md-12" action="/curso/criar" method="post">
+		<input type="hidden" class="form-control" id="id" value="${turma.id!''}" name="id" >
+	
 		<div class="form-row">
 			<div class="form-group col-md-6">
 				<label for="nome">Nome</label> <input type="text" class="form-control" id="nome" value="${turma.nome!''}"
@@ -39,6 +41,7 @@
 		</div>
 
 		<button type="submit" class="btn btn-outline-success">Salvar</button>
+		<a href="/curso/${turma.id!''}"  class="btn btn-outline-danger">Apagar</a>
 	</form>
 
 </div>

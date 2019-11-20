@@ -1,10 +1,11 @@
 package br.com.microedu.controller;
 
-import javax.websocket.server.PathParam;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -24,18 +25,22 @@ public class CursoController extends TemplateController {
 	}
 
 	@RequestMapping(value = { "/criar", "/criar/{id}" }, method = RequestMethod.GET)
-	public ModelAndView criar(@PathParam("id") Integer id) {
+	public ModelAndView criar(@PathVariable("id") Integer id) {
 		return getTemplate("pages/edicao-curso").addObject("turma", cursoService.buscarCurso(id));
 	}
 
 	@RequestMapping(value = { "/criar" }, method = RequestMethod.POST)
-	public void salvar(@ModelAttribute Curso curso) {
+	public void salvar(@ModelAttribute Curso curso, HttpServletResponse httpServletResponse) {
 		cursoService.salvar(curso);
+		httpServletResponse.setHeader("Location", "/curso");
+		httpServletResponse.setStatus(302);
 	}
 
-	@RequestMapping(value = { "/{id}" }, method = RequestMethod.POST)
-	public void apagar(@PathParam("id") Integer id) {
+	@RequestMapping(value = { "/{id}" }, method = RequestMethod.GET)
+	public void apagar(@PathVariable("id") Integer id, HttpServletResponse httpServletResponse) {
 		cursoService.apagar(id);
+		httpServletResponse.setHeader("Location", "/curso");
+		httpServletResponse.setStatus(302);
 	}
 
 }

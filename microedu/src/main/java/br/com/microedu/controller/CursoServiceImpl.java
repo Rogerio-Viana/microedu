@@ -1,6 +1,7 @@
 package br.com.microedu.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,9 +15,16 @@ public class CursoServiceImpl implements CursoService {
 	private CursoRepository cursoRepository;
 
 	@Override
-	public void apagar(Integer id) {
-		if (id != null)
-			cursoRepository.deleteById(id);
+	public Boolean apagar(Integer id) {
+		if (id != null) {
+			Optional<Curso> curso = cursoRepository.findById(id);
+			if (curso.isPresent()) {
+				cursoRepository.delete(curso.get());
+				return true;
+			}
+		}
+		return false;
+
 	}
 
 	@Override
@@ -26,8 +34,20 @@ public class CursoServiceImpl implements CursoService {
 
 	@Override
 	public void salvar(Curso curso) {
-		if (curso != null)
-			cursoRepository.save(curso);
+		if (curso.getId() != null) {
+			Optional<Curso> ent = cursoRepository.findById(curso.getId());
+			if (ent.isPresent()) {
+				ent.get().setDescricao(curso.getDescricao());
+				ent.get().setEmenta(curso.getEmenta());
+				ent.get().setHorario(curso.getHorario());
+				ent.get().setNome(curso.getNome());
+				ent.get().setProfessor(curso.getProfessor());
+
+				cursoRepository.save(curso);
+			}
+		}
+
+		cursoRepository.save(curso);
 	}
 
 	@Override
