@@ -45,4 +45,7 @@ Como estamos focando em apenas uma única parte do sistema a dos cadastros de cu
 - Implementação: https://github.com/Rogerio-Viana/microedu/blob/master/microedu/src/main/java/br/com/microedu/controller/CursoServiceImpl.java
 - Repository: https://github.com/Rogerio-Viana/microedu/blob/master/microedu/src/main/java/br/com/microedu/controller/CursoRepository.java
 
+# Uso do sistema
+1° Acesse o endereço: http://localhost:8080/curso ou caso já esteja dentro do sistema clicque no botão Curso
+![Acessar area de curso](https://user-images.githubusercontent.com/19811425/69339576-616c0500-0c44-11ea-9456-4a21684d75f8.PNG)
 
