@@ -12,10 +12,10 @@ Arquivo e configurações: https://github.com/Rogerio-Viana/microedu/blob/master
 
 # Estrutura do Projeto
 O projeto foi divido na seguinte estrutura
-Controller: mapeando e recebendo todas as requisições HTTP
-Service: Interface que decidirá todos os métodos que a camada de Controller terá acesso
-ServiceImpl: implementação do Service
-Repository: Interface de conexão com o banco de dados
+- Controller: mapeando e recebendo todas as requisições HTTP
+- Service: Interface que decidirá todos os métodos que a camada de Controller terá acesso
+- ServiceImpl: implementação do Service
+- Repository: Interface de conexão com o banco de dados
 
 # Arquivos que enviados ao cliente (Páginas WEB)
 microedu/microedu/src/main/resources/templates/ Ficará todos os arquivos HTML, JavaScript e CSS.
@@ -25,9 +25,9 @@ Como estamos usando o FlayWay que é um gerenciador de migração de banco de da
 
 # Arquivos do servidor (Classes Java)
 Como estamos focando em apenas uma única parte do sistema a dos cadastros de cursos/turmas, vamos falar somente dele
-1° Controller: Criamos uma Classe com a anotação de controller para ser gerenciados pelo Spring.
-2° Colocamos todos os métodos e anotomos eles com os mapeamentos necessários, métodos para salvar/atualizar, deletar e criar as turmas/cursos de nosso sistema.
-3° Após isto para cada mapeamento, o método responsavél por cada requisição irá chamar a Classe responsavél dentro do Service, a interface Service é injetada na Classe Controller (técnica/tecnologia chamda de CDI ou Injeção de depêndencia) para que tenha acesso a sua implementação e seja feito o processamento adequado a requisição.
-4° Após os métodos do Controller ter acesso as implementações das assinaturas da interface Service o ServiceImpl usará o Repository para ter acesso direto ao banco de dados, tais quais como, criação de registros, atualização e remoção dos mesmos.
+- 1° Controller: Criamos uma Classe com a anotação de controller para ser gerenciados pelo Spring.
+- 2° Colocamos todos os métodos e anotomos eles com os mapeamentos necessários, métodos para salvar/atualizar, deletar e criar as turmas/cursos de nosso sistema.
+- 3° Após isto para cada mapeamento, o método responsavél por cada requisição irá chamar a Classe responsavél dentro do Service, a interface Service é injetada na Classe Controller (técnica/tecnologia chamda de CDI ou Injeção de depêndencia) para que tenha acesso a sua implementação e seja feito o processamento adequado a requisição.
+- 4° Após os métodos do Controller ter acesso as implementações das assinaturas da interface Service o ServiceImpl usará o Repository para ter acesso direto ao banco de dados, tais quais como, criação de registros, atualização e remoção dos mesmos.
 
 
