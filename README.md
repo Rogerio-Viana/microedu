@@ -64,7 +64,7 @@ Após todas adições clique no botão "Salvar"
 Ao salvar o registro a nova informação é listada na tela inicial de Turmas
 ![listagem de novos](https://user-images.githubusercontent.com/19811425/69340520-75b10180-0c46-11ea-9c01-d2cb04849eea.PNG)
 
-Caso queira apagar um registro
+Caso queira apagar um registro clique entre na edição do registro e clique no botão de apagar
 ![apagar](https://user-images.githubusercontent.com/19811425/69340715-da6c5c00-0c46-11ea-903b-bfb99231a02d.PNG)
 
 
