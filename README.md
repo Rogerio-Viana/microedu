@@ -11,11 +11,12 @@ PostgresSQL, Apache FreeMarker, FlyWay, Hibernate
 Arquivo e configurações: https://github.com/Rogerio-Viana/microedu/blob/master/microedu/src/main/resources/application.properties
 
 # Estrutura do Projeto
-O projeto foi divido na seguinte estrutura
-- Controller: mapeando e recebendo todas as requisições HTTP
-- Service: Interface que decidirá todos os métodos que a camada de Controller terá acesso
-- ServiceImpl: implementação do Service
-- Repository: Interface de conexão com o banco de dados
+O projeto foi divido na seguinte estrutura.
+- Controller: mapeando e recebendo todas as requisições HTTP.
+- Service: Interface que decidirá todos os métodos que a camada de Controller terá acesso.
+- ServiceImpl: implementação do Service.
+- Repository: Interface de conexão com o banco de dados.
+- Entidade: aonde ficaram todas Classe.java com o mapeamento do Spring, estas classes são representação das tabelas no banco de dados, assim que o sistema iniciar o Spring sera responsavél por conectar ao banco de dados e criar as tabelas caso não exista.
 
 # Arquivos que enviados ao cliente (Páginas WEB)
 microedu/microedu/src/main/resources/templates/ Ficará todos os arquivos HTML, JavaScript e CSS.
