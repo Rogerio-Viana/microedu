@@ -23,6 +23,13 @@ microedu/microedu/src/main/resources/templates/ Ficará todos os arquivos HTML, 
 Como estamos utilizando um gerador de temples (Apache FreeMarker), criamos um arquivo chamdo template.html que terá todos os CDN's usados e o menu lateral que é comum em todas as páginas (neste arquivo ficará todos os arquivos e/ou objetos comuns nas páginas).
 
 Como estamos usando o FlayWay que é um gerenciador de migração de banco de dados na pasta microedu/microedu/src/main/resources/db/migration/ ficará todos script que seram executados e gerenciados pela a ferramenta.
+- Script's SQL do bancos de dados: https://github.com/Rogerio-Viana/microedu/tree/master/microedu/src/main/resources/db/migration
+
+
+- Template: https://github.com/Rogerio-Viana/microedu/blob/master/microedu/src/main/resources/templates/template.html
+- Página de Edição/Criação/Apagar : https://github.com/Rogerio-Viana/microedu/blob/master/microedu/src/main/resources/templates/pages/edicao-curso.html
+- Listagem dos registros: https://github.com/Rogerio-Viana/microedu/blob/master/microedu/src/main/resources/templates/pages/listagem-curso.html
+
 
 # Arquivos do servidor (Classes Java)
 Como estamos focando em apenas uma única parte do sistema a dos cadastros de cursos/turmas, vamos falar somente dele
