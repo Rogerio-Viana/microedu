@@ -46,6 +46,25 @@ Como estamos focando em apenas uma única parte do sistema a dos cadastros de cu
 - Repository: https://github.com/Rogerio-Viana/microedu/blob/master/microedu/src/main/java/br/com/microedu/controller/CursoRepository.java
 
 # Uso do sistema
-1° Acesse o endereço: http://localhost:8080/curso ou caso já esteja dentro do sistema clicque no botão Curso
+1° Acesse o endereço: http://localhost:8080/curso ou caso já esteja dentro do sistema clicque no botão Turmas
 ![Acessar area de curso](https://user-images.githubusercontent.com/19811425/69339576-616c0500-0c44-11ea-9456-4a21684d75f8.PNG)
+
+Caso queira editar uso registro de curso já existente clique no botão "Editar" do seu registro alvo
+![editar curso](https://user-images.githubusercontent.com/19811425/69340043-5ebddf80-0c45-11ea-95ba-9be54b02e23c.PNG)
+
+Após todas as suas alterações clique no botão "Salvar"
+![salvar ediççoes](https://user-images.githubusercontent.com/19811425/69340150-92006e80-0c45-11ea-89dc-1379f95d9ef6.PNG)
+
+Para criar um novo registro clique no botão "Criar Turma"
+![criar](https://user-images.githubusercontent.com/19811425/69340328-fcb1aa00-0c45-11ea-92ec-f042bbf5c9f5.PNG)
+
+Após todas adições clique no botão "Salvar"
+![criar novo](https://user-images.githubusercontent.com/19811425/69340201-aba1b600-0c45-11ea-8a16-291a5423fb0d.PNG)
+
+Ao salvar o registro a nova informação é listada na tela inicial de Turmas
+![listagem de novos](https://user-images.githubusercontent.com/19811425/69340520-75b10180-0c46-11ea-9c01-d2cb04849eea.PNG)
+
+Caso queira apagar um registro
+![apagar](https://user-images.githubusercontent.com/19811425/69340715-da6c5c00-0c46-11ea-903b-bfb99231a02d.PNG)
+
 
